@@ -1,3 +1,13 @@
+
+// snippets til terminalen for at udvikle SCSS
+// NB presets skal navgives --> _filnavn.scss --> defineres: @import "filnavn"; i den aktive scss
+// 1. download node-sass --> npm install --save-dev node-sass
+// 2. installer package.json --> npm init
+// 3. ændr stien i package.json --> Find script og erstat "test" med egen definition --> "my-sass": "node-sass -w style.scss style.css"
+// 4. live preview --> npm run my-sass (eller navn på scss)
+// 5. Site deployment --> git add filnavn.filtype --> git commit -m "dit commit" --> git push
+
+
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #d3a91f;
 $secondary-color: #141212;
@@ -11,7 +21,7 @@ html, body, p , ul{
   body {
     font: 100% $font-stack;
     color: $primary-color;
-  
+   
   }
   header{
       padding:$space*2 0 $space;
@@ -22,25 +32,74 @@ html, body, p , ul{
     li {
         margin: 0;
         display: inline;
-        a {
+        a{
             text-decoration: none;
             color: $secondary-color;
             background: $primary-color;
             padding: $space/4 $space/2;
         }
+        a:hover{
+            transition: all 1s;
+        }
+        &:first-child a:hover{
+            background: green;
+        }
+        &:nth-child(2) a:hover{
+            background:red;
+        }
+        &:nth-child(3) a:hover{
+            background:pink;
+        }
+        &:nth-child(4) a:hover{
+            background:grey;
+        }
+        &:nth-child(5) a:hover{
+            background:yellow;
+        }
+        &:nth-child(6) a:hover{
+            background: brown;
+        }
+        
     }
 }
+
+
 
 article {
     background: grayscale($primary-color);
     color: $secondary-color;
     padding: $space/2;
+    &::first-letter{
+        font-size: 150%;
+    }
+    &:first-child, &:last-child{
+        background: white;
+    }
+    &:nth-child(4n+1){
+        grid-column: 1/2;
+    }
+    &:nth-child(4n+2){
+        grid-column: 2/5;
+    }
+    &:nth-child(4n+3){
+        grid-column: 1/4;
+    }
+    &:nth-child(4n){
+        grid-column: 4/5;
+    }
 }
+
 main {
     width: $width*.9;
     margin: 0 auto;
-    background: lighten($secondary-color, 10%);
+    background: lighten($primary-color, 10%);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: $space/2;
   }
+
+  blockquote:after, blockquote:before{
+      content: "\" ";
+      font-size: 50px;
+  }
+

@@ -1,0 +1,23 @@
+{
+  "name": "css-selectors",
+  "version": "1.0.0",
+  "description": "The html file contains the structure, the scss file a basic layout",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "my-sass": "node-sass -w style.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FritzVentura/css-selectors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FritzVentura/css-selectors/issues"
+  },
+  "homepage": "https://github.com/FritzVentura/css-selectors#readme"
+}
